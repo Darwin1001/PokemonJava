@@ -1,6 +1,7 @@
 package fr.efrei.pokemon_tcg.constants;
 
 public enum TypePokemon {
-	FEU,
-	EAU
+	PLANTE, // 0
+	FEU, // 1
+	EAU // 2
 }

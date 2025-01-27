@@ -1,10 +1,7 @@
 package fr.efrei.pokemon_tcg.models;
 
 import fr.efrei.pokemon_tcg.constants.TypePokemon;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Pokemon {
@@ -17,6 +14,7 @@ public class Pokemon {
 
 	private Integer niveau;
 
+	@Enumerated(EnumType.STRING)
 	private TypePokemon type;
 
 	public String getNom() {
