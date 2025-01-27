@@ -1,8 +1,17 @@
 package fr.efrei.pokemon_tcg.models;
 
 import fr.efrei.pokemon_tcg.constants.TypePokemon;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+@Entity
 public class Pokemon {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.UUID)
+	private String uuid;
 
 	private String nom;
 
@@ -32,5 +41,9 @@ public class Pokemon {
 
 	public void setType(TypePokemon type) {
 		this.type = type;
+	}
+
+	public String getUuid() {
+		return uuid;
 	}
 }
