@@ -3,6 +3,8 @@ package fr.efrei.pokemon_tcg.models;
 import fr.efrei.pokemon_tcg.constants.TypePokemon;
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 public class Pokemon {
 

@@ -25,4 +25,33 @@ public class PokemonServiceImpl implements IPokemonService {
 	public void create(Pokemon pokemon) {
 		repository.save(pokemon);
 	}
+
+	@Override
+	public Pokemon findById(String uuid) {
+		// renvoie soit un pokemon soit null
+		return repository.findById(uuid).orElse(null);
+	}
+
+	@Override
+	public boolean update(String uuid, Pokemon pokemon) {
+		Pokemon pokemonAModifier = findById(uuid);
+		if(pokemonAModifier == null) {
+			return false;
+		}
+		pokemonAModifier.setNom(pokemon.getNom());
+		pokemonAModifier.setNiveau(pokemon.getNiveau());
+		pokemonAModifier.setType(pokemon.getType());
+		repository.save(pokemonAModifier);
+		return true;
+	}
+
+	@Override
+	public boolean delete(String uuid) {
+		Pokemon pokemonAModifier = findById(uuid);
+		if(pokemonAModifier == null) {
+			return false;
+		}
+		repository.deleteById(uuid);
+		return true;
+	}
 }
