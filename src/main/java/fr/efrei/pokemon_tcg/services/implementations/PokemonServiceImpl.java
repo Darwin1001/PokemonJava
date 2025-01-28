@@ -1,6 +1,7 @@
 package fr.efrei.pokemon_tcg.services.implementations;
 
 import fr.efrei.pokemon_tcg.constants.TypePokemon;
+import fr.efrei.pokemon_tcg.dto.CreatePokemon;
 import fr.efrei.pokemon_tcg.models.Pokemon;
 import fr.efrei.pokemon_tcg.repositories.PokemonRepository;
 import fr.efrei.pokemon_tcg.services.IPokemonService;
@@ -23,8 +24,12 @@ public class PokemonServiceImpl implements IPokemonService {
 	}
 
 	@Override
-	public void create(Pokemon pokemon) {
-		repository.save(pokemon);
+	public void create(CreatePokemon pokemon) {
+		Pokemon pokemonACreer = new Pokemon();
+		pokemonACreer.setType(pokemon.getType());
+		pokemonACreer.setNom(pokemon.getNom());
+		pokemonACreer.setNiveau(pokemon.getNiveau());
+		repository.save(pokemonACreer);
 	}
 
 	@Override

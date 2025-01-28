@@ -1,6 +1,7 @@
 package fr.efrei.pokemon_tcg.controllers;
 
 import fr.efrei.pokemon_tcg.constants.TypePokemon;
+import fr.efrei.pokemon_tcg.dto.CreatePokemon;
 import fr.efrei.pokemon_tcg.models.Pokemon;
 import fr.efrei.pokemon_tcg.services.IPokemonService;
 import fr.efrei.pokemon_tcg.services.implementations.PokemonServiceImpl;
@@ -35,7 +36,7 @@ public class PokemonController {
 	}
 
 	@PostMapping
-	public ResponseEntity<?> createPokemon(@RequestBody Pokemon pokemon) {
+	public ResponseEntity<?> createPokemon(@RequestBody CreatePokemon pokemon) {
 		// INSERT INTO pokemon(nom, niveau, type) VALUES (pokemon.nom, pokemon.niveau, pokemon.type);
 		pokemonService.create(pokemon);
 		return new ResponseEntity<>(HttpStatus.CREATED);
