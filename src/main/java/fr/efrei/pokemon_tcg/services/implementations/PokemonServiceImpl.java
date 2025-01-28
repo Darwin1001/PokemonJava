@@ -20,6 +20,9 @@ public class PokemonServiceImpl implements IPokemonService {
 
 	@Override
 	public List<Pokemon> findAll(TypePokemon typePokemon) {
+		if(typePokemon == null) {
+			return repository.findAll();
+		}
 		return repository.findAllByType(typePokemon);
 	}
 

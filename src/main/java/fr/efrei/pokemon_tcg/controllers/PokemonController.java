@@ -5,6 +5,7 @@ import fr.efrei.pokemon_tcg.dto.CreatePokemon;
 import fr.efrei.pokemon_tcg.models.Pokemon;
 import fr.efrei.pokemon_tcg.services.IPokemonService;
 import fr.efrei.pokemon_tcg.services.implementations.PokemonServiceImpl;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,7 +37,7 @@ public class PokemonController {
 	}
 
 	@PostMapping
-	public ResponseEntity<?> createPokemon(@RequestBody CreatePokemon pokemon) {
+	public ResponseEntity<?> createPokemon(@Valid @RequestBody CreatePokemon pokemon) {
 		// INSERT INTO pokemon(nom, niveau, type) VALUES (pokemon.nom, pokemon.niveau, pokemon.type);
 		pokemonService.create(pokemon);
 		return new ResponseEntity<>(HttpStatus.CREATED);
