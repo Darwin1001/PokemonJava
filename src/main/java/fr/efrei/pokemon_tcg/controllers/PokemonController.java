@@ -1,5 +1,6 @@
 package fr.efrei.pokemon_tcg.controllers;
 
+import fr.efrei.pokemon_tcg.constants.TypePokemon;
 import fr.efrei.pokemon_tcg.models.Pokemon;
 import fr.efrei.pokemon_tcg.services.IPokemonService;
 import fr.efrei.pokemon_tcg.services.implementations.PokemonServiceImpl;
@@ -19,9 +20,9 @@ public class PokemonController {
 	}
 
 	@GetMapping
-	public ResponseEntity<List<Pokemon>> getAll() {
+	public ResponseEntity<List<Pokemon>> getAll(@RequestParam(required = false) TypePokemon type) {
 		// SELECT * from pokemon;
-		return new ResponseEntity<>(pokemonService.findAll(), HttpStatus.OK);
+		return new ResponseEntity<>(pokemonService.findAll(type), HttpStatus.OK);
 	}
 
 	@GetMapping("/{uuid}")

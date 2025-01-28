@@ -1,5 +1,6 @@
 package fr.efrei.pokemon_tcg.services.implementations;
 
+import fr.efrei.pokemon_tcg.constants.TypePokemon;
 import fr.efrei.pokemon_tcg.models.Pokemon;
 import fr.efrei.pokemon_tcg.repositories.PokemonRepository;
 import fr.efrei.pokemon_tcg.services.IPokemonService;
@@ -17,8 +18,8 @@ public class PokemonServiceImpl implements IPokemonService {
 	}
 
 	@Override
-	public List<Pokemon> findAll() {
-		return repository.findAll();
+	public List<Pokemon> findAll(TypePokemon typePokemon) {
+		return repository.findAllByType(typePokemon);
 	}
 
 	@Override
