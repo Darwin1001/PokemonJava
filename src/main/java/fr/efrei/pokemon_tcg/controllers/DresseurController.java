@@ -38,13 +38,17 @@ public class DresseurController {
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 
-	// 5e46e731-786e-49fa-9a53-cc7498a4fe70
 	@PatchMapping("/{uuid}/capturer")
 	public ResponseEntity<?> capturer(
 			@PathVariable String uuid,
 			@RequestBody CapturePokemon capturePokemon
 	) {
 		dresseurService.capturerPokemon(uuid, capturePokemon);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	}
+
+	@PatchMapping("/{uuid}/acheter")
+	public ResponseEntity<?> acheter() {
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 }
