@@ -1,11 +1,9 @@
 package fr.efrei.pokemon_tcg.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Dresseur {
@@ -19,6 +17,9 @@ public class Dresseur {
 	private String prenom;
 
 	private LocalDateTime deletedAt;
+
+	@OneToMany
+	List<Pokemon> pokemonList;
 
 	public String getUuid() {
 		return uuid;
@@ -50,5 +51,13 @@ public class Dresseur {
 
 	public void setDeletedAt(LocalDateTime deletedAt) {
 		this.deletedAt = deletedAt;
+	}
+
+	public List<Pokemon> getPokemonList() {
+		return pokemonList;
+	}
+
+	public void setPokemonList(List<Pokemon> pokemonList) {
+		this.pokemonList = pokemonList;
 	}
 }
