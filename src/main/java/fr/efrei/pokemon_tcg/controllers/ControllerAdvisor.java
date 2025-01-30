@@ -8,7 +8,6 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import java.util.HashMap;
 import java.util.List;
@@ -33,7 +32,6 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler {
 					Map<String, String> response = new HashMap<>();
 					response.put("message", fieldError.getDefaultMessage());
 					response.put("field", fieldError.getField());
-					fieldError.getRejectedValue();
 					response.put("value", fieldError.getRejectedValue().toString());
 					return response;
 				})
