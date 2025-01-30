@@ -62,7 +62,7 @@ public class CarteService {
         Optional<Echange> echange = echangeRepository.findByDresseur1AndDresseur2AndDateEchange(dresseur1, dresseur2, today);
 
         if (echange.isPresent()) {
-            return false; // Échange déjà effectué aujourd'hui
+            return false; 
         }
 
         Echange newEchange = new Echange();

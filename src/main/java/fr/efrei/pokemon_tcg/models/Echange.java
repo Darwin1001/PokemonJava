@@ -1,4 +1,4 @@
-// filepath: /c:/Users/david/Desktop/Pokemon/pokemon-tcg/src/main/java/fr/efrei/pokemon_tcg/models/Echange.java
+
 package fr.efrei.pokemon_tcg.models;
 
 import jakarta.persistence.Entity;

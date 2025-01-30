@@ -108,7 +108,6 @@ public class DresseurServiceImpl implements IDresseurService {
 			Dresseur dresseur1 = dresseur1Opt.get();
 			Dresseur dresseur2 = dresseur2Opt.get();
 
-			// Simuler le combat (ici, on choisit aléatoirement le gagnant)
 			boolean dresseur1Gagne = Math.random() > 0.5;
 
 			if (dresseur1Gagne) {
@@ -137,7 +136,7 @@ public class DresseurServiceImpl implements IDresseurService {
 
 	@Override
 	public List<Echange> getHistoriqueEchanges(LocalDate startDate, LocalDate endDate) {
-		// Créer des échanges fictifs pour tester
+		// Créer des échanges  pour tester
 		Echange echange1 = new Echange();
 		echange1.setUuid("1");
 		echange1.setDresseur1("dresseur1_id");
