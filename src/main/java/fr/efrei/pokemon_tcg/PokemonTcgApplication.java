@@ -8,8 +8,7 @@ import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServic
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class, UserDetailsServiceAutoConfiguration.class})
 public class PokemonTcgApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PokemonTcgApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(PokemonTcgApplication.class, args);
+    }
 }
